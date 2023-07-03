@@ -1,12 +1,9 @@
-// TODO: Include packages needed for this application
-// import { prompt } from 'inquirer';
-// this is supposed to import require? hopefully it work
-
+//Import necessary code packages 
 const fs = require('fs');
 const path = require('path');
 const inquirer = require('inquirer');
 
-// Function to generate the README content
+//Generate the README content
 function generateREADME(answers) {
   return `
 # ${answers.title}
@@ -43,9 +40,9 @@ For any questions, please feel free to reach out to me:
 GitHub: [${answers.username}](https://github.com/${answers.username})
 Email: ${answers.email}
 `;
-}
+};
 
-// Prompt the user for input
+//Ask the user questions about what they want on their README
 inquirer
   .prompt([
     {
@@ -96,21 +93,19 @@ inquirer
     },
   ])
   .then((answers) => {
-    // Generate the README content
     const readmeContent = generateREADME(answers);
 
-    // Write the README file
-    fs.writeFile(path.join(__dirname, 'README.md'), readmeContent, (err) => {
-      if (err) {
-        console.error(err);
+    //Write the answers to the README file
+    fs.writeFile(path.join(__dirname, 'README.md'), readmeContent, (error) => {
+      if (error) {
+        console.error(error);
       } else {
         console.log('README.md file generated successfully!');
       }
     });
-  })
-  .catch((error) => {
-    console.error(error);
   });
+  // .catch((error) => {
+  //   console.error(error);
 
 
 // const questions = [];
