@@ -104,31 +104,3 @@ inquirer
       }
     });
   });
-  // .catch((error) => {
-  //   console.error(error);
-
-
-// const questions = [];
-
-// fs.writeFile('log.txt', process.argv[2], (err) =>
-//   err ? console.error(err) : console.log('Success!')
-// ); 
-
-// TODO: Create a function to write README file
-// function writeToFile(fileName, data) {}
-
-// // TODO: Create a function to initialize app
-// function init() {
-//     prompt(questions)
-//         .then((response) => {
-//             response.confirm === response.password
-//             ? console.log('success')
-//             : console.log('failure')
-//         }
-
-//         )
-
-// }
-
-// // Function call to initialize app
-// init();
