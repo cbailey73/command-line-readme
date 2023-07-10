@@ -12,23 +12,14 @@ function renderLicenseBadge(license) {
   return '';
 }
 
-// Function to generate the license link
-function renderLicenseLink(license) {
-  if (license) {
-    // Return the license link based on the license type
-    return `- [License](#license) - [License](https://opensource.org/licenses/${license})`;
-  }
-  return '';
-}
-
 // Function to generate the license section of README
 function renderLicenseSection(license) {
   if (license) {
     // Return the license section based on the license type
     return `
-## License
-This application is covered under the ${license} license. Click [here](https://opensource.org/licenses/${license}) to view the license details.
-`;
+This application is covered under the ${license} license. 
+Click [here](https://opensource.org/licenses/${license}) to view the license details.
+    `;
   }
   return '';
 }
@@ -36,13 +27,12 @@ This application is covered under the ${license} license. Click [here](https://o
 // Generate the README content
 function generateREADME(answers) {
   const licenseBadge = renderLicenseBadge(answers.license);
-  const licenseLink = renderLicenseLink(answers.license);
   const licenseSection = renderLicenseSection(answers.license);
 
   return `
-# ${answers.title}
-
 ${licenseBadge}
+
+# ${answers.title}
 
 ## Description
 ${answers.description}
@@ -51,7 +41,6 @@ ${answers.description}
 - [License](#license)
 - [Installation](#installation)
 - [Usage](#usage)
-${licenseLink}
 - [Contributing](#contributing)
 - [Tests](#tests)
 - [Questions](#questions)
@@ -141,7 +130,7 @@ inquirer
       }
     });
   });
-  
+
 // //Import necessary code packages 
 // const fs = require('fs');
 // const path = require('path');
